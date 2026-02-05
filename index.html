@@ -1,1 +1,22 @@
+// Source code is decompiled from a .class file using FernFlower decompiler (from Intellij IDEA).
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import javax.swing.SwingUtilities;
+
+class AttendanceSystem$4 extends KeyAdapter {
+   AttendanceSystem$4(AttendanceSystem var1) {
+      this.this$0 = var1;
+   }
+
+   public void keyReleased(KeyEvent var1) {
+      String var2 = this.this$0.accStudentNumberField.getText();
+      if (!var2.startsWith("06-2526-00")) {
+         SwingUtilities.invokeLater(() -> {
+            this.this$0.accStudentNumberField.setText("06-2526-00");
+            this.this$0.accStudentNumberField.setCaretPosition(this.this$0.accStudentNumberField.getText().length());
+         });
+      }
+
+   }
+}
 
